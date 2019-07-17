@@ -1,10 +1,9 @@
 import Vue from "vue";
 import Router from "vue-router";
 import Home from "./views/Home.vue";
-
 Vue.use(Router);
 
-export default new Router({
+const router = new Router({
   mode: "history",
   base: process.env.BASE_URL,
   routes: [
@@ -25,7 +24,23 @@ export default new Router({
     {
       path: "/map",
       name: "map",
-      component: () => import(/* webpackChunkName: "about" */ "./views/Map.vue")
+      component: () =>
+        import(/* webpackChunkName: "about" */ "./views/Map.vue"),
+      meta: { requiresAuth: true }
     }
   ]
 });
+
+router.beforeResolve(async (to, from, next) => {
+  if (to.matched.some(record => record.meta.requiresAuth)) {
+    try {
+      // FIXME: get user
+      next();
+    } catch (e) {
+      next({ path: "/" });
+    }
+  }
+  next();
+});
+
+export default router;
