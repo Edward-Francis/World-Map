@@ -1,20 +1,19 @@
 <template>
   <v-app>
-    <v-toolbar app>
-      <v-toolbar-title class="headline text-uppercase">
-        <span>Vuetify</span>
-        <span class="font-weight-light">MATERIAL DESIGN</span>
-      </v-toolbar-title>
-    </v-toolbar>
-
+    <core-header />
     <v-content>
       <router-view />
     </v-content>
+    <core-footer />
   </v-app>
 </template>
 
 <script>
 export default {
-  name: "App"
+  name: "App",
+  components: {
+    CoreHeader: () => import("@/components/core/Header"),
+    CoreFooter: () => import("@/components/core/Footer")
+  }
 };
 </script>
