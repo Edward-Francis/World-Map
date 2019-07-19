@@ -1,0 +1,14 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "world-map-dev-20190719090517-authRole",
+            "UnauthRoleArn": "arn:aws:iam::782536067549:role/world-map-dev-20190719090517-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::782536067549:role/world-map-dev-20190719090517-authRole",
+            "Region": "eu-west-1",
+            "DeploymentBucketName": "world-map-dev-20190719090517-deployment",
+            "UnauthRoleName": "world-map-dev-20190719090517-unauthRole",
+            "StackName": "world-map-dev-20190719090517",
+            "StackId": "arn:aws:cloudformation:eu-west-1:782536067549:stack/world-map-dev-20190719090517/f2783380-a9fb-11e9-a446-02761942ff2c"
+        }
+    }
+}
